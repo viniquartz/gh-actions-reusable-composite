@@ -22,4 +22,4 @@ jobs:
 
       - name: Run sample test
         run: |
-          python -c "import requests; print('✅ Requests imported successfully!')"
+          python -c "import requests; print('Requests imported successfully!')"

@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-reusable-ci:
-    uses: ./.github/workflows/reusable-ci.yml
+    uses: ./.github/workflows/reusable-ci.yaml
     with:
       python-version: "3.12"
       extra-packages: "boto3"
