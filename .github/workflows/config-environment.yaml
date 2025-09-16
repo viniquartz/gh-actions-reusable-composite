@@ -9,3 +9,11 @@ jobs:
     with:
       python-version: "3.12"
       extra-packages: "boto3"
+
+  print-secrets-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print environment and secret (masked)
+        run: |
+          echo "Environment: ${{ vars.ENVIRONMENT }}"
+          echo "API_KEY: ${{ secrets.API_KEY }}"
