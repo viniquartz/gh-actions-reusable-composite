@@ -1,0 +1,25 @@
+name: Reusable CI
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      extra-packages:
+        required: false
+        type: string
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup with Composite Action
+        uses: ./.github/actions/setup-python-and-deps
+        with:
+          python-version: ${{ inputs.python-version }}
+          extra-packages: ${{ inputs.extra-packages }}
+
+      - name: Run sample test
+        run: |
+          python -c "import requests; print('✅ Requests imported successfully!')"

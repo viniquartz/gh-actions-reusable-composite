@@ -1,0 +1,11 @@
+name: Main CI
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  call-reusable-ci:
+    uses: ./.github/workflows/reusable-ci.yml
+    with:
+      python-version: "3.12"
+      extra-packages: "boto3"
